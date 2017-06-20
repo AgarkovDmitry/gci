@@ -1,0 +1,38 @@
+mutation (
+  $company: String!,
+  $industry: String!,
+  $service: String!,
+  $description: String!,
+  $result: String!,
+  $name: String!,
+  $surname: String!,
+  $phone: String!,
+  $email: String!
+) {
+  order: createOrder(
+    company :$company,
+    industry: $industry,
+    service: $service,
+    description: $description,
+    result: $result,
+    name: $name,
+    surname: $surname,
+    phone: $phone,
+    email: $email
+  ) {
+    id,
+    company,
+    industry,
+    service,
+    description,
+    result,
+    name,
+    surname,
+    phone,
+    email,
+    seen {
+      name,
+      surname
+    }
+  }
+}
